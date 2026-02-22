@@ -1,0 +1,54 @@
+name: Build NavAssist APK
+
+on:
+  push:
+    branches: [ "**" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: ''
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-34 build-tools;34.0.0'
+
+      - name: Install Gradle 8.4
+        run: |
+          wget -q https://services.gradle.org/distributions/gradle-8.4-bin.zip -O /tmp/gradle.zip
+          unzip -q /tmp/gradle.zip -d /opt
+          export PATH="/opt/gradle-8.4/bin:$PATH"
+          echo "/opt/gradle-8.4/bin" >> $GITHUB_PATH
+          gradle --version
+
+      - name: Find project and build APK
+        run: |
+          BUILD_DIR=$(find . -name "settings.gradle" | head -1 | xargs dirname)
+          echo "Building in: $BUILD_DIR"
+          cd "$BUILD_DIR"
+          gradle assembleDebug --no-daemon --no-build-cache
+
+      - name: Find APK and copy
+        run: |
+          APK=$(find . -name "*.apk" | head -1)
+          echo "APK: $APK"
+          cp "$APK" NavAssist.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: NavAssist-APK
+          path: NavAssist.apk
+          retention-days: 90
