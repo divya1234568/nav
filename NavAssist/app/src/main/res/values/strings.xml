@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">NavAssist</string>
-    <string name="mode_blind">Blind Mode</string>
-    <string name="mode_deaf">Deaf Mode</string>
-    <string name="mode_mobility">Mobility Mode</string>
-    <string name="sos_title">Emergency SOS</string>
-    <string name="camera_title">AI Camera Scanner</string>
-</resources>
