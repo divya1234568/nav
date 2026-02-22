@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0A0F1E"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="🚨" android:textSize="72sp" android:layout_marginBottom="8dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="EMERGENCY SOS"
+        android:textSize="28sp" android:textStyle="bold"
+        android:textColor="#FF3C5F" android:layout_marginBottom="8dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Your live location will be sent instantly\nto all your guardians"
+        android:textSize="14sp" android:textColor="#8B97C4"
+        android:gravity="center" android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/tv_sos_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📍 Locating..."
+        android:textSize="13sp"
+        android:textColor="#00C97B"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Confirm Panel -->
+    <LinearLayout
+        android:id="@+id/layout_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Guardian List -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/card_bg"
+            android:padding="16dp" android:layout_marginBottom="20dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="WILL NOTIFY:" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="#8B97C4" android:layout_marginBottom="12dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="👩" android:textSize="28sp" android:layout_marginEnd="12dp"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Priya (Mother)" android:textSize="15sp" android:textStyle="bold" android:textColor="#FFFFFF"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="● Online" android:textSize="12sp" android:textColor="#00C97B"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="👨" android:textSize="28sp" android:layout_marginEnd="12dp"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Arun (Brother)" android:textSize="15sp" android:textStyle="bold" android:textColor="#FFFFFF"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="● Online" android:textSize="12sp" android:textColor="#00C97B"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_sos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tv_sos_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ready to send SOS"
+            android:textSize="14sp"
+            android:textColor="#8B97C4"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/btn_send_sos"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="🆘 SEND SOS NOW"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF3C5F"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Cancel — I'm Safe"
+            android:textSize="15sp"
+            android:textColor="#8B97C4"
+            android:backgroundTint="#1E2540"/>
+    </LinearLayout>
+
+    <!-- Sent Panel -->
+    <LinearLayout
+        android:id="@+id/layout_sent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="✅" android:textSize="64sp" android:layout_marginBottom="12dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="SOS SENT!"
+            android:textSize="28sp" android:textStyle="bold" android:textColor="#00C97B"
+            android:layout_marginBottom="8dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="All guardians notified with your live location.\nHelp is on the way!"
+            android:textSize="14sp" android:textColor="#8B97C4" android:gravity="center"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0A0F1E">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:background="#141929">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NavAssist"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/tv_mode_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BLIND MODE"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/badge_bg"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:layout_marginEnd="10dp"/>
+
+        <Button
+            android:id="@+id/btn_sos"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="🆘 SOS"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF3C5F"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"/>
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Location Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_blue_bg"
+                android:padding="16dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📍" android:textSize="28sp" android:layout_marginEnd="12dp"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView android:id="@+id/tv_location"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Anna Nagar, Chennai"
+                        android:textSize="15sp" android:textStyle="bold" android:textColor="#FFFFFF"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="GPS Active • Updated now"
+                        android:textSize="12sp" android:textColor="#8B97C4"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- CAMERA - LARGEST BUTTON for blind users -->
+            <Button
+                android:id="@+id/btn_camera"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:text="📸  SCAN SURROUNDINGS\nAI Camera — Tap to identify objects"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#0057FF"
+                android:layout_marginBottom="12dp"
+                android:contentDescription="Open camera to scan and identify objects around you"/>
+
+            <!-- Voice Command -->
+            <Button
+                android:id="@+id/btn_voice_command"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:text="🎤  VOICE COMMAND"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1E2540"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Feature Row 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <Button
+                    android:id="@+id/btn_navigate"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:text="🗺️\nNavigate"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#1E2540"
+                    android:layout_marginEnd="6dp"/>
+
+                <Button
+                    android:id="@+id/btn_nearby"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:text="🏥\nNearby Places"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#1E2540"
+                    android:layout_marginStart="6dp"/>
+            </LinearLayout>
+
+            <!-- Guardian Button -->
+            <Button
+                android:id="@+id/btn_guardian"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="🛡️  GUARDIAN MONITOR"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#2A0F1E"
+                android:layout_marginBottom="80dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
